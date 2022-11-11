@@ -40,7 +40,7 @@ def gradient_descent_linreg(X, y, n_its):
 
 # function that does gradient descent for ridge
 
-def gradient_descent_ridge(X, y, lam, n_its):
+def gradient_descent_ridge(X, y, eta, lam, n_its):
 
     # initialize betas randomly
     beta = np.random.randn(X.shape[1],1)

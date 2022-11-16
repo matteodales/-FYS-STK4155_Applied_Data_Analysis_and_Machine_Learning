@@ -17,7 +17,7 @@ class Layer():
     def create_weights(self, input_size, rng):
         
         # initializes the weights for the layers between 0 and 1
-        self._weights = rng.standard_normal((self._size, input_size))
+        self._weights = rng.uniform(-1,1,(self._size, input_size))
 
     def forward(self, inputs):
         

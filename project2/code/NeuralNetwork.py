@@ -83,22 +83,13 @@ class NeuralNetwork:
                 prev_layer_err = self.layers[j].backward(a_h[j], z_h[j], prev_layer_err, prev_activation_fn, learning_rate, regularization)
         
 
-    def train(self, inputs, targets, initial_learning_rate= 0.1, final_learning_rate= None, epochs = 1000, minibatch_size = 20, regularization= 0):
+    def train(self, inputs, targets, eta= 0.1, epochs = 1000, minibatch_size = 20, regularization= 0):
 
         # performs training of the model by feedforward and backpropagation iteratively
 
         minibatch_count = int(inputs.shape[0] / minibatch_size)
 
-        # computes the learning schedule between the initial and final learning rate
-        learning_schedule = lambda epoch: initial_learning_rate
-        if final_learning_rate is not None:
-            t0 = initial_learning_rate * final_learning_rate / (initial_learning_rate - final_learning_rate) * epochs
-            t1 = final_learning_rate / (initial_learning_rate - final_learning_rate) * epochs
-            learning_schedule = lambda epoch: t0 / (t1 + epoch)
-
         for i in range(1, epochs+1):
-
-            eta = learning_schedule(i)
 
             # we permute the data to obtain different minibatches each time
             perm = self.generator.permuted(np.arange(0, inputs.shape[0]))

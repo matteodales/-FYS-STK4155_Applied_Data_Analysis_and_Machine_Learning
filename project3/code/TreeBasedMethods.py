@@ -300,7 +300,7 @@ def update_weights(w_i, alpha, y, y_pred):
 
     return weights/sum(weights)
     
-class AdaBoost:
+class Boost:
     
     def __init__(self):
         self.alphas = []
@@ -364,7 +364,7 @@ class AdaBoost:
 
         # Predict class label for each weak classifier, weighted by alpha_m
         for m in range(self.M):
-            y_pred_m = self.G_M[m].predict(X)# * self.alphas[m]
+            y_pred_m = self.G_M[m].predict(X) * self.alphas[m]
             weak_preds.iloc[:,m] = y_pred_m
 
         # Calculate final predictions

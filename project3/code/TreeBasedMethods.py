@@ -169,18 +169,17 @@ class RandomForest:
         # build each tree of the forest
         num_built = 0
         while num_built < self.num_trees:
-            try:
-                clf = DecisionTreeClass(
-                    min_samples_split=self.min_samples_split,
-                    max_depth=self.max_depth
-                )
-                # create sample
-                _X, _y = self._sample(X, y)
-                # Train
-                clf.fit(_X, _y)
+            clf = DecisionTreeClass(
+                min_samples_split=self.min_samples_split,
+                max_depth=self.max_depth
+            )
+            # create sample
+            _X, _y = self._sample(X, y)
+            # Train
+            clf.fit(_X, _y)
 
-                self.decision_trees.append(clf)
-                num_built += 1
+            self.decision_trees.append(clf)
+            num_built += 1
     
     def predict(self, X):
         

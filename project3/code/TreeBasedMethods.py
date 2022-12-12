@@ -21,7 +21,7 @@ def mse(y):
 
 class Node:
 
-    # implements a node in a classification tree
+    """ Implements a node in a classification tree """ 
     
     def __init__(self, feature=None, threshold=None, left=None, right=None, *, value=None):
 
@@ -40,7 +40,7 @@ class Node:
 
 class DecisionTreeClass:
 
-    # implements the tree
+    """ Implements a classification tree """ 
 
     def __init__(self, classes=[-1,1], max_depth=100, min_samples_split=2):
         self.classes = classes
@@ -139,7 +139,7 @@ class DecisionTreeClass:
 
 class RandomForest:
     
-    # class the implements random forest
+    """ Implements the Random Forest ensemble method """ 
 
     def __init__(self, num_trees=25, min_samples_split=2, max_depth=5):
 
@@ -219,6 +219,8 @@ def update_weights(w_i, alpha, y, y_pred):
     
 class AdaBoost:
     
+    """ Implements the AdaBoost ensemble method """
+
     def __init__(self):
         self.alphas = []
         self.G_M = []

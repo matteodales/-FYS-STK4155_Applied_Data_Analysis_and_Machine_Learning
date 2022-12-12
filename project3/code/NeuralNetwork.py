@@ -5,6 +5,8 @@ import numpy as np
 # creates the Multi Layer Perceptron model
 
 class NeuralNetwork:
+
+    """ Implements a Feed-Forward Neural Network """
     
     def __init__(self, input_size, cost_function_grad, random_state):
 

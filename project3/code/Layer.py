@@ -4,6 +4,8 @@ import numpy as np
 
 class Layer():
 
+    """ Implements a layer for a Feed-Forward Neural Network """
+
     def __init__(self, size, act_fun, act_fun_grad, initial_bias = 0.001):
 
         self._size = size

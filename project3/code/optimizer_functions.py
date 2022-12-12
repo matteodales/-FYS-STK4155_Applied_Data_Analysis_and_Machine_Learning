@@ -4,9 +4,11 @@
 import numpy as np
 from activation_functions import *
 
-# function that does gradient descent with fixed learning rate
+
 
 def gradient_descent(X, y, eta, n_its):
+
+    """ function that does gradient descent with fixed learning rate """
 
     # initialize betas randomly
     beta = np.random.randn(np.shape(X)[1],1)
@@ -18,10 +20,9 @@ def gradient_descent(X, y, eta, n_its):
     return beta
 
 
-
-# function that does gradient descent for OLS
-
 def gradient_descent_linreg(X, y, n_its):
+
+    """ function that does gradient descent for OLS """
 
     # initialize betas randomly
     beta = np.random.randn(np.shape(X)[1],1)
@@ -38,9 +39,10 @@ def gradient_descent_linreg(X, y, n_its):
     return beta
 
 
-# function that does gradient descent for ridge
 
 def gradient_descent_ridge(X, y, eta, lam, n_its):
+
+    """ function that does gradient descent for ridge """
 
     # initialize betas randomly
     beta = np.random.randn(X.shape[1],1)
@@ -57,9 +59,9 @@ def gradient_descent_ridge(X, y, eta, lam, n_its):
     return beta
 
 
-# function that does gradient descent with momentum
-
 def gradient_descent_with_momentum(X, y, eta, delta, n_its):
+
+    """ function that does gradient descent with momentum """
 
     # initialize betas randomly
     beta = np.random.randn(X.shape[1],1)
@@ -75,6 +77,8 @@ def gradient_descent_with_momentum(X, y, eta, delta, n_its):
 
 
 def stochastic_gradient_descent(X, y, eta, n_epochs, size_minibatch):
+
+    """ function that does stochastic gradient descent """
 
     # initialize betas randomly
     beta = np.random.randn(X.shape[1],1)
@@ -92,9 +96,9 @@ def stochastic_gradient_descent(X, y, eta, n_epochs, size_minibatch):
 
 
 
-# SGD using Adagrad
-
 def stochastic_gradient_descent_with_adagrad(X, y, eta, delta, n_epochs, size_minibatch):
+
+    """ SGD using Adagrad """
 
     # initialize betas randomly
     beta = np.random.randn(X.shape[1],1)
@@ -115,10 +119,11 @@ def stochastic_gradient_descent_with_adagrad(X, y, eta, delta, n_epochs, size_mi
 
 
 
-# SGD using RMSProp
 
 
 def stochastic_gradient_descent_with_rmsprop(X, y, eta, delta, rho, n_epochs, size_minibatch):
+
+    """ SGD using RMSProp """
 
     # initialize betas randomly
     beta = np.random.randn(X.shape[1],1)
@@ -141,10 +146,11 @@ def stochastic_gradient_descent_with_rmsprop(X, y, eta, delta, rho, n_epochs, si
 
 
 
-# SGD using ADAM
 
 
 def stochastic_gradient_descent_with_adam(X, y, eta, delta, rho1, rho2, n_epochs, size_minibatch):
+
+    """ SGD using ADAM """
 
     # initialize betas randomly
     beta = np.random.randn(X.shape[1],1)
@@ -171,6 +177,8 @@ def stochastic_gradient_descent_with_adam(X, y, eta, delta, rho1, rho2, n_epochs
 
 
 def logistic_regression_sgd(X, y, eta, regularization, n_epochs, size_minibatch):
+
+    """ function that does logistic regression with minibatch stochastic gradient descent """
 
     # initialize betas randomly
     y = y.reshape((len(y),))
